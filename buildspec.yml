@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo "Pre-build phase"
+      - cd MVC5App
+      - dotnet restore
+  build:
+    commands:
+      - echo "Build phase"
+      - dotnet publish -c Release -o ./publish
+artifacts:
+  files:
+    - '**/*'
